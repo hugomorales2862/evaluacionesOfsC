@@ -1,0 +1,55 @@
+
+.container{
+	width: 90%;
+}
+
+fieldset.scheduler-border {
+	background: -moz-radial-gradient(center, ellipse cover, rgba(30,49,61,0.4) 0%, rgba(125,185,232,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(30,49,61,0.4)), color-stop(100%,rgba(125,185,232,0))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover, rgba(30,49,61,0.4) 0%,rgba(125,185,232,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover, rgba(30,49,61,0.4) 0%,rgba(125,185,232,0) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover, rgba(30,49,61,0.4) 0%,rgba(125,185,232,0) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center, rgba(30,49,61,0.4) 0%,rgba(125,185,232,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#661e313d', endColorstr='#007db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	border: 1px groove #ddd !important;
+	padding: 0 1.4em 1.4em 1.4em !important;
+	margin: 0 0 1.5em 0 !important;
+	-webkit-box-shadow: -2px -2px 3px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    -2px -2px 3px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         -2px -2px 3px 0px rgba(50, 50, 50, 0.75);
+	border-radius: 6px;
+	
+}
+
+
+.fila-fija{
+	padding: 3px 0px;
+	color: #F2F2F2;
+	background-image: -o-linear-gradient(bottom, #D8DBDB 0%, #9BA1A1 59%, #6D7475 100%, #2B2A2B 100%);
+	background-image: -moz-linear-gradient(bottom, #D8DBDB 0%, #9BA1A1 59%, #6D7475 100%, #2B2A2B 100%);
+	background-image: -webkit-linear-gradient(bottom, #D8DBDB 0%, #9BA1A1 59%, #6D7475 100%, #2B2A2B 100%);
+	background-image: -ms-linear-gradient(bottom, #D8DBDB 0%, #9BA1A1 59%, #6D7475 100%, #2B2A2B 100%);
+	background-image: linear-gradient(to bottom, #D8DBDB 0%, #9BA1A1 59%, #6D7475 100%, #2B2A2B 100%);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	text-shadow: -2px 1px 2px rgba(230, 230, 230, 1);
+}
+
+.fila-hover{
+	color: #424242;
+	text-shadow: -2px 1px 1px rgba(150, 150, 150, 1);
+}
+
+.fila-hover:hover{
+	background:#848484;
+	color: #FAFAFA;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	opacity:0.7;
+	text-shadow: -2px 1px 1px rgba(230, 230, 230, 1);
+}
+
+
+
