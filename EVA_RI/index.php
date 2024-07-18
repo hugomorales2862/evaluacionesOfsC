@@ -1,30 +1,34 @@
 <?php
 include_once('html_fns.php');
 include_once("CP_MENU/xajax_fns_menu.php");
-session_start();
-$_SESSION['auth_user'] = 634576;
-$_SESSION['pass'] = 634576;
 
+	//$dependencia1 = $_SESSION['dep_cod']; 
+    $dependencia1 = 2010; 
 $dependencia1 = $_SESSION['dep_cod'];
-//$dependencia1 = 2010;
 $usuario = $_SESSION['auth_user'];
 $plaza1 = $_SESSION['org_plaza'];
-$dep_desc = $_SESSION['dep_desc_ct'];
-
-// var_dump($_SESSION);
-$ClsPer = new ClsPersonal();
-$result = $ClsPer->get_personal_usuario($usuario);
+$dep_desc = $_SESSION['dep_desc_md'];
+$_SESSION['EVADESD1'];
 
 
+	
 
-foreach ($result as $row) {
-	$nom1 = $row['PER_NOM1'];
-	$nom2 = $row['PER_NOM2'];
-	$ape1 = $row['PER_APE1'];
-	$ape2 = $row['PER_APE2'];
-	$grado = $row['GRA_DESC_LG'];
-	$arma = $row['ARM_DESC_LG'];
-}
+	$ClsPer = new ClsPersonal();
+	$result = $ClsPer->get_personal_usuario($usuario);
+	foreach ($result as $row){
+		$nom1 = $row['PER_NOM1'];
+		$nom2 = $row['PER_NOM2'];
+		$ape1 = $row['PER_APE1'];
+		$ape2 = $row['PER_APE2'];
+		$grado = $row['GRA_DESC_LG'];
+		$arma = $row['ARM_DESC_LG'];
+	}
+
+	$_SESSION['arma'] = $arma;
+	$_SESSION['grado'] = $grado; 
+	$_SESSION['nombre'] = $nom1.' '.$nom2.' '.$ape1.' '.$ape2;
+
+
 ?>
 <!DOCTYPE html>
 <html>

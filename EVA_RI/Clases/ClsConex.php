@@ -8,10 +8,10 @@ class ClsConex
         $user = $_SESSION['auth_user'];
         $pass = $_SESSION['pass'];
         try {
-            $ifxConnect = new PDO("informix:host=srvlnx; service=1526; database=mdn; server=srvlnx_tcp; protocol=onsoctcp;", $user, $pass);
+            //$ifxConnect = new PDO("informix:host=srvlnx; service=1526; database=mdn; server=srvlnx_tcp; protocol=onsoctcp;", $user, $pass);
             // $ifxConnect = new PDO("informix:host=srvlnx; service=1526; database=mdn; server=srvlnx_tcp; protocol=onsoctcp; CLIENT_LOCALE=en_US.utf8", $user, $pass);
             // $ifxConnect = new PDO("informix:host=zeusnet; service=1526; database=mdn; server=hercules; protocol=onsoctcp; EnableScrollableCursors=1;", $user, $pass);
-
+            $ifxConnect = new PDO("informix:host=192.168.73.30; service=1526; database=mdn; server=atila_tcp; protocol=onsoctcp; EnableScrollableCursors=1;", $user, $pass);
         } catch (PDOException $e) {
             $e->getMessage();
         }

@@ -2,11 +2,11 @@
 include_once('html_fns.php');
 include_once("CP_MENU/xajax_fns_menu.php");
 	session_start();
-	$dependencia1 = $_SESSION['dep_cod']; 
-	// $dependencia1 = 2010; 
-	$usuario = $_SESSION['auth_user'];
-	$plaza1 = $_SESSION['org_plaza'];
-	$dep_desc = $_SESSION['dep_desc'];
+	//$dependencia1 = $_SESSION['dep_cod']; 
+    $dependencia1 = 2010; 
+	$usuario = $_SESSION['634576'];
+	$plaza1 = $_SESSION['7912025'];
+	$dep_desc = $_SESSION['COMDO. INF. TEC. '];
 	
 	$ClsPer = new ClsPersonal();
 	$result = $ClsPer->get_personal_usuario($usuario);
@@ -18,6 +18,12 @@ include_once("CP_MENU/xajax_fns_menu.php");
 		$grado = $row['GRA_DESC_LG'];
 		$arma = $row['ARM_DESC_LG'];
 	}
+
+	$_SESSION['arma'] = $arma;
+	$_SESSION['grado'] = $grado; 
+	$_SESSION['nombre'] = $nom1.' '.$nom2.' '.$ape1.' '.$ape2;
+
+
 ?>
 <!DOCTYPE html>
 <html>
