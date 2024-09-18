@@ -28,6 +28,7 @@ function Trae_Datos_Catalogo_inmediato($cat){
 				$cont++;
 			}
 			$dependencia1 = $_SESSION['dep_cod']; 
+			$dep = $_SESSION['dep_cod'];
 			// SE AGREGO ESTA VALIDACIÓN POR LA REESTRUCTURACIÓN DE BRIGADAS, POR EL TIEMPO EN LA TABLA TIEMPOS
 			// ESTAS PERSONAS NO PODIAN EVALUAR, POR LO QUE SE CÁLCULO EL TIEMPO CON BASE AL PUESTO ANTERIOR
 			// if($dependencia1 == '2665' || $dependencia1 == '2660' || $dependencia1 == '2810' || $dependencia1 == '2815' || $dependencia1 == '2680'|| $dependencia1 == '2685'|| $dependencia1 == '2640' || $dependencia1 == '2960' ){
@@ -263,7 +264,7 @@ function Trae_Datos_Catalogo_inmediato($cat){
 					$respuesta->alert("ERROR DE CONEXION");
 				}
 		}
-		//$respuesta->alert($sql);
+		
 		return $respuesta;
 	}
 	

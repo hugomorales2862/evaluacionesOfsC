@@ -18,7 +18,7 @@
 			$evaluacion = 1;
 			$comp_eva = '1 - '.$annio;
 //ELIMINAR EL MES 1 Y 2 PARA EL PERIODO 2-2016
-		}elseif($mes == 10 or $mes == 11 or $mes == 12 ){
+		}elseif($mes==9 or $mes == 10 or $mes == 11 or $mes == 12 ){
 			$evaluacion = 2;
 			$comp_eva = '2 - '.$annio;
 			//$comp_eva = '2 - 2023';

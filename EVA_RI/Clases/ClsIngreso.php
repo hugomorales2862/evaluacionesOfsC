@@ -68,23 +68,25 @@ class ClsIngreso extends ClsConex{
 	function certificar_evaluacion($cod_eva,$situacion){
 		$sql = "UPDATE eva_evaluacion set";
 		if($situacion == 1 or $situacion==4 or $situacion==35){
-		$sql.= " eva_situacion = 28";
+		$sql.= " eva_situacion = 28,";
 		}
 		if($situacion == 8 or $situacion==12){
-		$sql.= " eva_situacion = 29";
+		$sql.= " eva_situacion = 29,";
 		}
 		if($situacion == 13){
-		$sql.= " eva_situacion = 30";
+		$sql.= " eva_situacion = 30,";
 		}
 		if($situacion==15 or $situacion == 19 or $situacion==6){
-		$sql.= " eva_situacion = 31";
+		$sql.= " eva_situacion = 31,";
 		}
 		if($situacion == 22 or $situacion==17){
-		$sql.= " eva_situacion = 32";
+		$sql.= " eva_situacion = 32,";
 		}
 		if($situacion == 27){
-		$sql.= " eva_situacion = 33";
+		$sql.= " eva_situacion = 33,";
 		}
+		$sql.=" eva_usuario = user,";
+		$sql .= " eva_fecha_aprov = CURRENT YEAR TO MINUTE";
 		$sql.= " where eva_id = $cod_eva";
 		$sql.= " and eva_situacion in (1,4,6,8,12,13,17,19,22,27,35);";
 		return $sql;	
@@ -115,7 +117,7 @@ class ClsIngreso extends ClsConex{
 		$sql.= " $codigo_arma1, $codigo_arma2, $codigo_arma3, $codigo_grado1,";
 		$sql.= " $codigo_grado2, $codigo_grado3, '$empleo1', '$empleo2', '$empleo3', '$tiempo1',";
 		$sql.= " '$tiempo2', '$tiempo3',";
-		$sql.= " '$puesto_ant', $tipo_evaluacion, '$obs_inmediato', '$obs_final', $dep,'$obs');";
+		$sql.= " '$puesto_ant', $tipo_evaluacion, '$obs_inmediato', '$obs_final', '$dep','$obs','','');";
 		return $sql;	
 	}
 	

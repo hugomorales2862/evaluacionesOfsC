@@ -192,7 +192,8 @@ require_once("../html_fns.php");
 			$salida.= '<td width = "60px" 	align="center">Reporte final</td>';
 			$salida.= '<td width = "60px" 	align="center">Impugnar</td>';
 			$salida.= '<td width = "50px" align="center"><font size="2"><b>ANULAR</b></font></td>';
-
+			$salida.= '<td width = "50px" align="center"><font size="2"><b>SUBIR PDF</b></font></td>';
+			$salida.= '<td width = "50px" align="center"><font size="2"><b>VER PDF</b></font></td>';
 			//$salida.= '<td width = "60px" 	align="center">REP_INPUGNADA</td>';
 			//$salida.= '<td width = "60px" 	align="center">Eliminar</td>';
 			
@@ -241,13 +242,16 @@ require_once("../html_fns.php");
 						$salida.= 		"<td align = 'center' bgcolor='#F5F6CE'><center>X</center></td>";
 						$salida.= 		"<td align = 'center' bgcolor='#F5F6CE'><center>X</center></td>";
 						$salida.= 		"<td align = 'center' bgcolor='#F5F6CE'><center>X</center></td>";
-						$salida.= "<td align = 'center'><center><a href = '../CP_REP/REP_eva.php?eva=".$eva_id."' onclick = '' target='_blank' type = 'button' class='btn btn-success' title = 'Generar reporte final'><i class='icon-file'></i></a></center></td>";
+						$salida.= 		"<td align = 'center'><center><a href = '../CP_REP/REP_eva.php?eva=".$eva_id."' onclick = '' target='_blank' type = 'button' class='btn btn-success' title = 'Generar reporte final'><i class='icon-file'></i></a></center></td>";
 						
 						$salida.= 		"<td align = 'center' bgcolor='#F5F6CE'><center><a onclick = 'xajax_Impugnar_evaluacion(".$eva_id.")' class='btn btn-warning' title = 'Impugnar'><i class=' icon-hand-up'></i></a></center></td>";
 						//$salida.= "<td align = 'center'><center><a href = '../CP_REP/REP1_eva.php?eva=".$eva_id."' onclick = '' target='_blank' type = 'button' class='btn btn-warning' title = 'Generar reporte final'><i class='icon-file'></i></a></center></td>";
 					}
 					//$salida.= "<td align = 'center'><a href = '../CP_REP/REP_bor.php?eva=".$eva_id."' onclick = '' target='_blank' type = 'button' class='btn btn-warning' title = 'Generar reporte borrador'><i class='icon-file'></i></a></td>";
 					$salida.= 		"<td align = 'center' bgcolor='#F5F6CE'><a onclick = 'xajax_Eliminar_evaluacion(".$eva_id.")' class='btn btn-danger' title = 'Eliminar'><i class='icon-trash'></i></a></td>";
+					$salida.= 		"<td align = 'center' bgcolor='#F5F6CE'><a onclick = 'xajax_Subir_pdf(".$eva_id.")' class='btn btn-info' title = 'SUBIR PDF'><i class='icon-hdd'></i></a></td>";
+					$salida.= 		"<td align = 'center' bgcolor='#F5F6CE'><a onclick = 'xajax_Ver_pdf(".$eva_id.")' class='btn btn-white' title = 'VER PDF'><i class='icon-eye-open'></i></a></td>";
+
 				$salida.='</tr>';
 			}
 			$salida.= '</tbody>';
@@ -337,6 +341,7 @@ require_once("../html_fns.php");
 					}
 					//$salida.= "<td align = 'center'><a href = '../CP_REP/REP_bor.php?eva=".$eva_id."' onclick = '' target='_blank' type = 'button' class='btn btn-warning' title = 'Generar reporte borrador'><i class='icon-file'></i></a></td>";
 					$salida.= 		"<td align = 'center' bgcolor='#F5F6CE'><a onclick = 'xajax_Eliminar_evaluacion(".$eva_id.")' class='btn btn-danger' title = 'Eliminar'><i class='icon-trash'></i></a></td>";
+			
 				$salida.='</tr>';
 			}
 			$salida.= '</tbody>';

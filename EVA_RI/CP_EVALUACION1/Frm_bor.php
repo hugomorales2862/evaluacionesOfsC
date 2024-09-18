@@ -176,8 +176,16 @@ if ($total_sol > 0) {
 		}
 
 
-		function Grabar_formulario() {
-//alert("entra java");
+		function Grabar_formulario(parametro) {
+			console.log("Parámetro recibido:", parametro);
+			function obtenerValor(id) {
+        var elemento = document.getElementById(id);
+        if (!elemento) {
+            console.error("El elemento con id '" + id + "' no se encontró en el DOM.");
+            return null;
+        }
+        return elemento.value;
+    }
 			var evaluacion = document.getElementById('evaluacion').value;
 			var linea = document.getElementById('linea').value;
 			var destino = document.getElementById('destino').value;
@@ -202,7 +210,6 @@ if ($total_sol > 0) {
 			var tipo_evaluacion = document.getElementById('tipo_evaluacion').value;
 			var tipo_oficial = document.getElementById('tipo_oficial').value;
 
-			
 			if (tipo_oficial != '3') {
 
 				if (codigo_grado1 != "") {
@@ -290,7 +297,7 @@ if ($total_sol > 0) {
 			}
 		}
 
-
+	
 		function foco(elemento) {
 			document.getElementById(elemento).focus();
 		}
@@ -356,12 +363,13 @@ if ($total_sol > 0) {
 					</div>
 					<?php 				
 					
-					if ($mes == 5 or $mes == 6 or $mes == 7 or $mes == 8) { ?>
+				
+					if ($mes == 5 or $mes == 6 or $mes == 7 or $mes == 8 ) { ?>
 						<div class='span2'>
 							<!-- <input type = 'text' class='span12' name = 'evaluacion' id = 'evaluacion' value ='1 - <?php echo $annio; ?>' readonly></input>  -->
 							<input type='text' class='span12' name='evaluacion' id='evaluacion' value='<?php echo $comp_eva; ?>' readonly></input>
 						</div>
-					<?php } elseif ($mes == 11 or $mes == 12 or $mes == 1 or $mes == 2) { ?>
+					<?php } elseif ($mes == 9 or $mes == 11 or $mes == 12 or $mes == 1 or $mes == 2) { ?>
 						<div class='span2'>
 							<input type='text' class='span12' name='evaluacion' id='evaluacion' value='<?php echo $comp_eva; ?>' readonly></input>
 							<!-- <input type = 'text' class='span12' name = 'evaluacion' id = 'evaluacion' value ='2 - <?php echo $annio; ?>' readonly></input>  -->

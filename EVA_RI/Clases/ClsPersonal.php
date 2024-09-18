@@ -426,19 +426,31 @@ class ClsPersonal extends ClsConex{
 
 	
 	
-	function get_oficiales_fin1($dependencia,$comp_eva){
-		$sql = "select * from eva_evaluacion, mper, grados, armas, morg
-		where eva_periodo = '$comp_eva'
-		and eva_situacion in(4,8,13,19,22,27,28,29,30,31,32,33,34,35)
-		and eva_dep = $dependencia
-		and eva_cat1 = per_catalogo
-		and per_grado = gra_codigo
-		and per_arma = arm_codigo
-		and per_plaza = org_plaza
-		ORDER BY gra_codigo DESC, org_plaza DESC;";
+	function get_oficiales_fin1($dependencia,$comp_eva,$apobador){
+		$sql = "select * from eva_evaluacion, mper, grados, armas, morg where eva_periodo = '$comp_eva' and eva_situacion in(4,8,13,19,22,27,28,29,30,31,32,33,34,35) and eva_dep = $dependencia and eva_cat1 = per_catalogo and per_grado = gra_codigo and per_arma = arm_codigo and per_plaza = org_plaza";
+		if($apobador != null || $apobador != ''){
+			$sql.=" and eva_usuario = '$apobador'";
+		}
+		$sql.=" ORDER BY gra_codigo DESC, org_plaza DESC";
+	
 		$result = $this->exec_query($sql);
+		
 		return $result;
 	}
+
+	
+	function getAuditoria($dependencia,$comp_eva,$apobador){
+		$sql = "select * from eva_evaluacion, mper, grados, armas, morg where eva_periodo = '$comp_eva' and eva_situacion in(4,8,13,19,22,27,28,29,30,31,32,33,34,35) and eva_dep = $dependencia and eva_cat1 = per_catalogo and per_grado = gra_codigo and per_arma = arm_codigo and per_plaza = org_plaza";
+		if($apobador != null || $apobador != ''){
+			$sql.=" and eva_usuario = '$apobador'";
+		}
+		$sql.=" ORDER BY  eva_fecha_aprov";
+	
+		$result = $this->exec_query($sql);
+		
+		return $result;
+	}
+	
 	
 	
 	function get_directores($dependencia,$comp_eva){
